@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Automation Test ">
+    <test name="Api Automation Test ">
+        <groups>
+            <run>
+                <include name="ui"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.gcw.testautomation.tests.uiTestcases.UiAutomationTest"/>
+        </classes>
+    </test>
+
+    <test name="UI Automation Test ">
+        <classes>
+            <class name="com.gcw.apiautomation.runner.FeatureTestRunner"/>
+        </classes>
+    </test>
+    <listeners>
+        <listener class-name="com.vimalselvam.testng.listener.ExtentTestNgFormatter"/>
+    </listeners>
+</suite>
