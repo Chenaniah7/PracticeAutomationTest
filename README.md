@@ -1,5 +1,5 @@
 # Automation Test Practice
-*Author: Charlie Guan*  
+*Author: Guan Chuan Wen*  
 *Language: Java*  
 *TestFrameWork: Cucumber and TestNG*
 
