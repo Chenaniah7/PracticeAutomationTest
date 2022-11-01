@@ -4,7 +4,7 @@
 *TestFrameWork: Cucumber and TestNG*
 
 
-### 1. API automation test framework Instructions (Cucumber) :  
+### 1. API automation test framework Instructions  :  
 1. Init a BaseStep instance use BaseStepFactory.getBaseStep(), this method will init Entity and Config instance by default
 2. Assemble the http request use the method, for example: baseStep.setBaseUri(),baseStep.updatePathParam() etc.
 3. Call the baseStep.getResource() to submit the http request
@@ -20,7 +20,7 @@
         String resContent =  baseStep.getResponseJson();
     
 
-### 2. UI automation test instructions (TestNG):
+### 2. UI automation test instructions :
 1. Init webdriver and PracticePage instance in setUp
 2. Find elements in PracticePage class
 3. Write testng test cases in UiAutomationTest class
@@ -58,7 +58,7 @@ Execute this command **mvn test -Dentity=autotest** in the project directory, it
     │   │   └───java
     │   │       └───com
     │   │           └───gcw
-    │   │               └───apiautomation                         ------------------------api automation framework
+    │   │               └───apiautomation                       ------ api automation framework
     │   │                   ├───core
     │   │                   │   │   BaseStep.java
     │   │                   │   │   BaseStepFactory.java
@@ -71,15 +71,15 @@ Execute this command **mvn test -Dentity=autotest** in the project directory, it
     │   │                   │   │   │       AbstractRestJob.java
     │   │                   │   │   │       RestJobProvider.java
     │   │                   │   │   │       
-    │   │                   │   │   └───restimpl                  ------------------------- Http method operation
-    │   │                   │   │           RestCreateJob.java    ------------------------- POST method
-    │   │                   │   │           RestReadJob.java      ------------------------- GET method
-    │   │                   │   │           
+    │   │                   │   │   └───restimpl                ------ Http method operation
+    │   │                   │   │           RestCreateJob.java  ------ POST method
+    │   │                   │   │           RestReadJob.java    ------ GET method
+    │   │                   │   │          
     │   │                   │   ├───config
-    │   │                   │   │       ConfigProvider.java       ------------------------- get the test data from config file
+    │   │                   │   │       ConfigProvider.java     ------ get the test data from config file
     │   │                   │   │       
     │   │                   │   ├───domain
-    │   │                   │   │   └───entity                    ------------------------- save all api request data
+    │   │                   │   │   └───entity                --------- save all api request data
     │   │                   │   │           Entity.java
     │   │                   │   │           EntityBuilder.java
     │   │                   │   │           
@@ -87,7 +87,7 @@ Execute this command **mvn test -Dentity=autotest** in the project directory, it
     │   │                   │   │       ConfigKeys.java
     │   │                   │   │       
     │   │                   │   ├───request
-    │   │                   │   │   └───headers                   ------------------------- generate default headers from config file
+    │   │                   │   │   └───headers              ---------- generate default headers from config file
     │   │                   │   │           Headers.java
     │   │                   │   │           HeadersAssembler.java
     │   │                   │   │           
@@ -95,14 +95,14 @@ Execute this command **mvn test -Dentity=autotest** in the project directory, it
     │   │                   │           Constants.java
     │   │                   │           
     │   │                   └───runner
-    │   │                           FeatureTestRunner.java      ---------------------------- cucumber configuration
+    │   │                           FeatureTestRunner.java    ---------- cucumber configuration
     │   │                           
     │   └───test
     │       ├───java
     │       │   └───com
     │       │       └───gcw
     │       │           └───testautomation
-    │       │               ├───steps                          ------------------------------- cucumber step definitions
+    │       │               ├───steps                      ------------- cucumber step definitions
     │       │               │       ApiTestSteps.java
     │       │               ├───support
     │       │               │   ├───beans
@@ -115,23 +115,23 @@ Execute this command **mvn test -Dentity=autotest** in the project directory, it
     │       │               │   │       Endpoint.java
     │       │               │   │       Params.java
     │       │               │   │       
-    │       │               │   ├───dataproviders              ------------------------------ testNG's data providers
+    │       │               │   ├───dataproviders          ------------ testNG's data providers
     │       │               │   │       PracticeDataProvider.java
     │       │               │   │       
     │       │               │   └───pages
-    │       │               │           PracticePage.java      ------------------------------ define the element selector for practice page
+    │       │               │           PracticePage.java  ------------ define the element selector for practice page
     │       │               │           
     │       │               └───tests
     │       │                   ├───apiTestcases
-    │       │                   │       AutomationTestForAPI.feature ------------------------- api automation test cases                                 
+    │       │                   │       AutomationTestForAPI.feature  --- api automation test cases                                 
     │       │                   │       
     │       │                   └───uiTestcases
-    │       │                           UiAutomationTest.java        ------------------------- ui automation test cases
+    │       │                           UiAutomationTest.java   --------- ui automation test cases
     │       │                           
     │       └───resources
     │           │   cucumber.properties                
     │           │   
-    │           ├───config                                          -------------------------- test data config file 
+    │           ├───config                          --------- test data config file 
     │           │       application-autotest.conf
     │           │       application.conf
     │           │       
@@ -146,6 +146,6 @@ Execute this command **mvn test -Dentity=autotest** in the project directory, it
     │           │       report.html
     │           │       
     │           └───suites
-    │                   automation-test-suite.xml       -------------------------------------- test suite xml for maven-surefile plugin             
+    │                   automation-test-suite.xml  ------ test suite xml for maven-surefile plugin             
     │
 
