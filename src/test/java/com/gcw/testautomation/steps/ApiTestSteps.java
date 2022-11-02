@@ -39,7 +39,6 @@ public class ApiTestSteps {
 
     @Given("retrieve all user details")
     public void retrieveAllUserDetails() throws JsonProcessingException {
-
         baseStep.setEndPoint(Endpoint.USERS);
         baseStep.getResource();
         Assert.assertEquals(baseStep.getResourceCode(), HttpStatus.SC_OK);
@@ -102,6 +101,7 @@ public class ApiTestSteps {
         switch (httpOperation.toLowerCase()){
             case "post":
                 baseStep.postPayload();
+                break;
             case "get":
                 baseStep.getResource();
         }

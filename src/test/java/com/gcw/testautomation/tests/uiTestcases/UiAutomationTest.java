@@ -21,9 +21,8 @@ import java.util.List;
 
 @Test(groups = "ui")
 public class UiAutomationTest {
-    ChromeDriver chromeDriver;
-
-    PracticePage practicePage;
+    private  ChromeDriver chromeDriver;
+    private PracticePage practicePage;
 
     Config config = ConfigProvider.config(System.getProperty(ConfigKeys.ENTITY));
 
@@ -129,17 +128,17 @@ public class UiAutomationTest {
 
     @Test
     public void testWebTableFixedHeaderExample(){
-        double expectedPriceSum = 296;
+        double expectedTotalAmount = 296;
         List<WebElement> webElementList = practicePage.getAllFixedHeaderTable();
         webElementList.remove(0);
-        List<String> priceList = new ArrayList<>();
+        List<String> amountList = new ArrayList<>();
         for (WebElement element : webElementList) {
             List<WebElement> rowList = element.findElements(By.tagName("td"));
-            String price = rowList.get(rowList.size()-1).getText();
-            priceList.add(price);
+            String amount = rowList.get(rowList.size()-1).getText();
+            amountList.add(amount);
         }
-        double actualPriceSum = priceList.stream().mapToDouble(Double::parseDouble).sum();
-        Assert.assertEquals(actualPriceSum,expectedPriceSum);
+        double actualTotalAmount = amountList.stream().mapToDouble(Double::parseDouble).sum();
+        Assert.assertEquals(actualTotalAmount,expectedTotalAmount);
     }
 
 }
